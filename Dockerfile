@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER Daniil Pichikin <d.v.pichikin@gmail.com>
 
 ## Install wget
+RUN apt-get update
 RUN apt-get install wget build-essential -y
 
 # Install and configure Redis 5.0
