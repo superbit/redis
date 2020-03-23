@@ -1,5 +1,8 @@
 FROM ubuntu:18.04
 MAINTAINER Daniil Pichikin <d.v.pichikin@gmail.com>
+## Set timezone
+ENV TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ## Install wget
 RUN apt-get update
@@ -37,4 +40,3 @@ EXPOSE 6379
 
 # Expose our data
 VOLUME ["/data"]
-
