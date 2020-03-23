@@ -3,13 +3,13 @@ MAINTAINER Daniil Pichikin <d.v.pichikin@gmail.com>
 
 ## Install wget
 RUN apt-get update
-RUN apt-get install wget build-essential -y
+RUN apt-get install wget build-essential tcl -y
 
 # Install and configure Redis 5.0
 RUN cd /tmp
-RUN wget http://download.redis.io/releases/redis-5.0.8.tar.gz
-RUN tar xzvf redis-5.0.8.tar.gz
-RUN cd redis-5.0.8
+RUN wget http://download.redis.io/redis-stable.tar.gz
+RUN tar xzvf redis-stable.tar.gz
+RUN cd redis-stable
 RUN make
 RUN make install
 RUN mkdir -p /etc/redis
